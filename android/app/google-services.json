@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "344665953137",
+    "project_id": "sigmoid-5480a",
+    "storage_bucket": "sigmoid-5480a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344665953137:android:c2becd3adbf1df741b1cd0",
+        "android_client_info": {
+          "package_name": "com.onyxzed.sigmoid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344665953137-au3nsauv2jur9h27j81itb8ko6cc6u0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrpoUl3J-5GBkF7G9f2UKsE2VqVzRyjzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344665953137-au3nsauv2jur9h27j81itb8ko6cc6u0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
