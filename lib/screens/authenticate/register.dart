@@ -70,13 +70,11 @@ class _RegisterState extends State<Register> {
                           TextStyle(color: Colors.white))),
                   onPressed: () async {
                     if (_formkey.currentState!.validate()) {
-                      // print(email);
-                      // print(password);
                       dynamic result =
                           await _authService.registerWithEmail(email, password);
                       if (result == null) {
                         setState(() => errorMsg = 'please input a valid email');
-                      } else {}
+                      }
                     }
                   },
                 ),

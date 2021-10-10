@@ -13,10 +13,12 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final AuthService _authService = AuthService();
+  final _formkey = GlobalKey<FormState>();
 
   // text field state
   String email = '';
   String password = '';
+  String errorMsg = '';
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +40,12 @@ class _SignInState extends State<SignIn> {
       body: Container(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
           child: Form(
+            key: _formkey,
             child: Column(
               children: <Widget>[
                 SizedBox(height: 20),
                 TextFormField(
+                  validator: (val) => val!.isEmpty ? 'Enter an email' : null,
                   onChanged: (val) {
                     setState(() => email = val.trim());
                   },
@@ -49,6 +53,9 @@ class _SignInState extends State<SignIn> {
                 SizedBox(height: 20),
                 TextFormField(
                   obscureText: true,
+                  validator: (val) => val!.length < 6
+                      ? 'Password must be longer than 6 chars'
+                      : null,
                   onChanged: (val) {
                     setState(() => password = val.trim());
                   },
@@ -62,9 +69,19 @@ class _SignInState extends State<SignIn> {
                       textStyle: MaterialStateProperty.all(
                           TextStyle(color: Colors.white))),
                   onPressed: () async {
-                    print(email);
-                    print(password);
+                    if (_formkey.currentState!.validate()) {
+                      dynamic result =
+                          await _authService.signInWithEmail(email, password);
+                      if (result == null) {
+                        setState(() => errorMsg = 'Credentials not found');
+                      }
+                    }
                   },
+                ),
+                SizedBox(height: 20),
+                Text(
+                  errorMsg,
+                  style: TextStyle(color: Colors.red),
                 )
               ],
             ),
