@@ -35,11 +35,20 @@ class _SignInState extends State<SignIn> {
               title: Text('Sign in to Sigmoid'),
               actions: <Widget>[
                 TextButton.icon(
-                    onPressed: () {
-                      widget.toggleView();
-                    },
-                    icon: Icon(Icons.person),
-                    label: Text('Sign Up'))
+                  onPressed: () {
+                    widget.toggleView();
+                  },
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.black,
+                  ),
+                  label: Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                )
               ],
             ),
             body: Container(

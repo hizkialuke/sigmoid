@@ -35,11 +35,20 @@ class _RegisterState extends State<Register> {
               title: Text('Sign up to Sigmoid'),
               actions: <Widget>[
                 TextButton.icon(
-                    onPressed: () {
-                      widget.toggleView();
-                    },
-                    icon: Icon(Icons.person),
-                    label: Text('Sign In'))
+                  onPressed: () {
+                    widget.toggleView();
+                  },
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.black,
+                  ),
+                  label: Text(
+                    'Sign In',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                )
               ],
             ),
             body: Container(
